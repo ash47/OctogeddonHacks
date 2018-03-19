@@ -1,4 +1,4 @@
-# OctogeddonHacks
+# Octogeddon Hacking Information and Hacking Tools
  - This is a repo containing hacking tools and hacking related files for Octogeddon
 
 # Where are save files stored?
@@ -18,5 +18,5 @@
  - `EverythingUnlockedUltimateStart` This is a save file with the game beaten, which unlocks Hard mode and Endless Ocean. You'll also start out with unlimited money when you press "New Game", and you'll be able to add an infinite number of tentacles to your Octogeddon.
 
 # How do I unpack data.ayg?
- - There is research done by aluigi on [ZenHAX](http://zenhax.com/viewtopic.php?t=7396) with regards to unpacking this file.
+ - There is research done by aluigi on [ZenHAX](http://zenhax.com/viewtopic.php?t=7396) with regards to unpacking / extracting the data.ayg file.
  - As of writing this, there is a BMS script which attempts to unpack the files, it is able to list them all, HOWEVER, the unpacked files appear to be encrypted, and as such, the tool is currently useless besides seeing what files exist.
