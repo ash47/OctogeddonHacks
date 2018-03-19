@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+	<title>Octogeddon | Save File Editor</title>
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/alertify.min.js"></script>
+	<script src="js/filesaver.min.js"></script>
+	<script src="js/buffer.js"></script>
+	<script src="js/jsoneditor.min.js"></script>
+	<script src="js/app.js"></script>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/alertify.min.css"/>
+	<link rel="stylesheet" href="css/alertify.bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/jsoneditor.min.css"/>
+	<link rel="stylesheet" href="css/app.css"/>
+</head>
+<body class="maxHeight">
+	<div class="maxHeight">
+
+		<div id="mainMenu">
+			<p>
+				Please select a <span class="badge badge-success">.sav</span> or <span class="badge badge-success">.sv2</span> file.
+			</p>
+			<input type="file" id="theFile" name="file" accept=".sav,.sv2" />
+			<button class="btn btn-primary" onclick="$('#theFile').click();">
+				Load Save File
+			</button>
+
+			<button class="btn btn-success requireLoadedFile" onclick="window.downloadEditedSaveFile();">
+				Export .sav
+			</button>
+
+			<button class="btn btn-success requireLoadedFile" onclick="window.downloadEditedSaveFile('sv2');">
+				Export .sv2
+			</button>
+		</div>
+
+		<div id="jsoneditor" class="requireLoadedFile"></div>
+
+		<div id="usefulInfo" class="requireLoadedFile">
+			<div>
+				<h3>Tentacles:</h3>
+				<p>"tentacle", "snakeleg", "crableg", "cobraleg", "kingcobraleg", "supersnake", "porcupineleg", "queenbeeleg", "superchickenleg", "horseshoe", "trexleg", "goldfishleg", "dragonleg", "dolphinleg", "narwhal", "sawshark", "pelican",  "penguinleg", "lobsterleg", "beeleg", "chickenleg", "frogleg",  "turtleleg", "angler", "elephantleg", "snappingturtleleg"</p>
+			</div>
+
+			<div>
+				<h3>Enemies:</h3>
+				<p>"sub", "plane", "speedysub", "speedyplane", "heavysub", "heavyplane", "spawnerminiboss", "spawnersubspawn", "nuclearplane", "nuclearsub", "nucleartanker", "tankboss", "sharksub", "sharkplane", "swarm", "flyingswarm", "centipedeboss", "missiletank", "megaplane", "megasub", "hopperboss", "shootersub", "shooterplane", "piranhasub", "piranhaplane", "shooterminiboss", "centipedesub", "tank", "crabboss", "cloakedsub", "cloakedplane", "heavysharksub", "heavysharkplane", "robooctoboss", "cloakedheavyplane", "cloakedheavysub", "gigatank", "mimeboss", "minijelly", "pillbugjelly", "scatteringswarm", "flyingscatteringswarm", "pillbugboss", "drone", "gigaplane", "gigasub", "whitehouse"</p>
+			</div>
+
+			<div>
+				<h3>Other:</h3>
+				<p>"snail", "coral", "scallop", "conch", "shells", "pufferbuddy", "starfishbuddy", "eelbuddy", "urchinbuddy"</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
