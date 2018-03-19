@@ -128,6 +128,7 @@ $(document).ready(function() {
 				case 'LABITEMS':
 				case 'NEWENEMIES':
 				case 'OWNEDBUDDIES':
+				case 'OLDLEGS':
 				case 'PURCHASES':
 				case 'SEENCUTSCENES':
 				case 'SEENOBJECTS':
@@ -334,8 +335,14 @@ $(document).ready(function() {
 				rawData: saveFileContents
 			};
 
-			// Attempt to load the save file
-			loadSaveFile(info);
+			try {
+				// Attempt to load the save file
+				loadSaveFile(info);
+			} catch(e) {
+				console.log(e);
+
+				alertify.error('Failed to load your save file, please share a copy on the Discord chat so we can add support for your save file.');
+			}
 		} else {
 			alertify.error("Had an error successfully reading the save file.");
 		}
