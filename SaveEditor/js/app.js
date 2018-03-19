@@ -172,6 +172,7 @@ $(document).ready(function() {
 
 		// Show editor stuff
 		$(".requireLoadedFile").show();
+		$("#pleaseSupportMe").hide();
 	}
 
 	// Reads an array of strings

@@ -43,3 +43,7 @@
 .requireLoadedFile {
 	display: none;
 }
+
+#pleaseSupportMe {
+	padding: 4px;
+}
