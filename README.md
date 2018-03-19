@@ -8,10 +8,10 @@
  - `Steam/userdata/525620/remote/`
 
 # Save file format?
- - The original version of the game uses a `.sav` format.
- - The update that came out 10th March 2018 changed the save file format, there are now two files: `.sv2` and `.sv2x`
- - The `.sv2x` as of now can safely be deleted and doesn't seem to affect anything, however, a backup should be kept just incase
- - The `.sv2x` file is simply a `.sav` file with a checksum added to the end
+ - The original version of the game uses a `octogeddon.sav` format.
+ - The update that came out 10th March 2018 changed the save file format, there are now two files: `octogeddon.sv2` and `octogeddon.sv2x`
+ - The `octogeddon.sv2x` as of now can safely be deleted and doesn't seem to affect anything, however, a backup should be kept just incase
+ - The `octogeddon.sv2x` file is simply a `octogeddon.sav` file with a checksum added to the end
 
 # Hacked Save Files
  - You can find various hacked save files in the "HackedSaves" directory. These should be installed into the save files directory.
