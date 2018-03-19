@@ -11,8 +11,8 @@
 #jsoneditor {
 	position: absolute;
 	left: 4px;
-	right: 4px;
-	top: 120px;
+	right: 364px;
+	top: 140px;
 	bottom: 240px;
 }
 
@@ -20,12 +20,24 @@
 #usefulInfo {
 	position: absolute;
 	left: 4px;
-	right: 4px;
+	right: 364px;
 	bottom: 0px;
 
 	height: 240px;
 
 	overflow-y: scroll;
+}
+
+#tutorials {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	width: 360px;
+
+	padding: 4px;
+
+	border-left: 1px solid #000;
 }
 
 .requireLoadedFile {
