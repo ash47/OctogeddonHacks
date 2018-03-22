@@ -92,11 +92,25 @@ $(document).ready(function() {
 				// We got a blank command? wtf?
 				case "":
 					// Do nothing
+
+					// ]Decide how much to skip
+					var bytesLeft = buff.length - info.pos;
+					if(bytesLeft < 8) {
+						var randomBytes = skipBytes(info, bytesLeft);
+						writeRawBuffer(info, randomBytes);
+					}
 				break
 
 				// Null, just skip another byte
 				case "\x00":
-					var randomBytes = skipBytes(info, 1);
+				console.log('asd')
+					// Decide how much to skip
+					var bytesLeft = buff.length - info.pos;
+					if(bytesLeft > 8) {
+						bytesLeft = 1;
+					}
+
+					var randomBytes = skipBytes(info, bytesLeft);
 					writeRawBuffer(info, randomBytes);
 				break;
 
