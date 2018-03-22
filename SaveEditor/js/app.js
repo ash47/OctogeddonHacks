@@ -103,7 +103,6 @@ $(document).ready(function() {
 
 				// Null, just skip another byte
 				case "\x00":
-				console.log('asd')
 					// Decide how much to skip
 					var bytesLeft = buff.length - info.pos;
 					if(bytesLeft > 8) {
