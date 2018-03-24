@@ -182,7 +182,9 @@ $(document).ready(function() {
 		}
 
 		// Save file is now loaded!
-		window.jsonEditor.set(info.data);
+		if(!noOverRide) {
+			window.jsonEditor.set(info.data);
+		}
 
 		// Show editor stuff
 		$(".requireLoadedFile").show();
