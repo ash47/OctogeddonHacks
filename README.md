@@ -23,5 +23,8 @@
  - Make sure to delete old save files that are in both locations, per above
 
 # How do I unpack data.ayg?
- - There is research done by aluigi on [ZenHAX](http://zenhax.com/viewtopic.php?t=7396) with regards to unpacking / extracting the data.ayg file.
- - As of writing this, there is a BMS script which attempts to unpack the files, it is able to list them all, HOWEVER, the unpacked files appear to be encrypted, and as such, the tool is currently useless besides seeing what files exist.
+ - This repo contains a tool to both unpack and repack the data.ayg file! The tool will only allow you to replace existing files, it currently can't add or delete new files to the data.ayg.
+ - The tool is written with [NodeJS](https://nodejs.org/en/download/) so make sure you've downloaded and installed a copy.
+ - Copy your `data.ayg` file into the Unpackers directory and then run `unpack.bat` to unpack all of the files -- This will create the `extracted` and `edited_extracted` directories.
+ - Copy any files you wish to edit into the `edited_extracted` directory, making sure that the exact path matches in both.
+ - Run the `repack.bat` to repack the `data.ayg` file, this will create a new file `repacked_data.ayg`.

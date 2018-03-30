@@ -1,2 +1,0 @@
-node encryption.js
-pause
