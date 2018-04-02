@@ -1,4 +1,5 @@
 var fs = require('fs');
+var path = require('path');
 
 function decryptFile(buff, buffSize) {
 	var keyNum = 0x01020304 + buff.length;
@@ -153,13 +154,8 @@ function unpackDataAyg(filePath, outputPath, opts) {
 
 	console.log('Done extracting!');
 
-	// Advertise the YouTube channel
-	console.log('');
-	console.log('If you like this tool, and want to support the tool\'s development then make sure to subscribe to our YouTube channel.');
-	console.log('Need help? Watch our Octogeddon modding tutorials on our YouTube channel.');
-	console.log('');
-	console.log('https://www.youtube.com/AzzaFortysix');
-	console.log('');
+	// Advertise our stuff
+	doAdvertising();
 
 	if(opts.inject) {
 		console.log('Writing...');
@@ -171,6 +167,182 @@ function unpackDataAyg(filePath, outputPath, opts) {
 
 		console.log('Done writing!');
 	}
+}
+
+function prepareFileStructure(folderList) {
+	var theOutput = {
+		name: ''
+	};
+
+	// Loop over each folder
+	for(var i=0; i<folderList.length; ++i) {
+		// Prepare entries for this folder
+		prepareFileStructureSub(folderList[i], theOutput);
+	}
+
+	return theOutput;
+}
+
+function prepareFileStructureSub(directory, storeInto) {
+	if(storeInto == null) {
+		storeInto = {};
+	}
+
+	storeInto.folderList = storeInto.folderList || [];
+	storeInto.fileList = storeInto.fileList || [];
+	storeInto.smartList = storeInto.smartList || {};
+
+	var allFiles = fs.readdirSync(directory);
+
+	for(var i=0; i<allFiles.length; ++i) {
+		// Grab info on the file
+		var thisFile = allFiles[i];
+		var fullPath = path.join(directory,thisFile);
+		var fileInfo = fs.statSync(fullPath);
+
+		// We will store info in here
+		var myInfo = {
+			name: thisFile,
+			fullPath: fullPath
+		};
+
+		var shouldPush = true;
+		if(storeInto.smartList[thisFile]) {
+			// We are going to edit the existing one
+			myInfo = storeInto.smartList[thisFile]
+
+			// Update the path to the file
+			myInfo.fullPath = fullPath;
+
+			// We shouldn't push
+			shouldPush = false;
+		} else {
+			// Store myInfo
+			storeInto.smartList[thisFile] = myInfo;
+		}
+
+		if(fileInfo.isDirectory()) {
+			// Add all the subdirectories
+			prepareFileStructureSub(fullPath, myInfo);
+
+			// Push it into the folder list
+			if(shouldPush) storeInto.folderList.push(myInfo);
+		} else {
+			// Push it into the file list
+			if(shouldPush) storeInto.fileList.push(myInfo);
+		}
+	}
+
+	return storeInto;
+}
+
+// Builds an AYG archive from scratch
+function buildAYG(outputName, fileList) {
+	//console.dir(fileList);
+
+	// Create the stream we will use to write the archive
+	var writeStream = fs.createWriteStream(outputName);
+
+	// Write the header
+	writeStream.write('AYGP');
+	writeStream.write('\x00\x00\x00\x00');
+	writeStream.write('\x04\x00\x00\x00');
+	writeStream.write('\x00\x00\x00\x00');
+	writeStream.write('\x00\x00\x00\x00');
+	writeStream.write('\x00\x00\x00\x00');
+	writeStream.write('\x00\x00\x00\x00');
+	writeStream.write('\x00\x00\x00\x00');
+
+	console.log('Generating Archive...');
+
+	var allSections = buildSection(fileList, true);
+
+	// Advertise our stuff
+	doAdvertising();
+
+	// Tell the user what we're doing
+	console.log('Done generating! Writing...');
+
+	writeStream.write(allSections);
+	writeStream.end();
+
+	// Done!
+	console.log('Please wait while we write ' + outputName);
+}
+
+function buildSection(fileInfo, isDir) {
+
+	// Create the name entry
+	var buffFileName = createBufferString(fileInfo.name);
+
+	// This will store all the sections
+	var allSections = [
+		new Buffer(4),	// We need a blank buffer to write the buff length into
+		buffFileName
+	];
+
+	if(isDir) {
+		console.log(' + Folder: ' + fileInfo.name);
+
+		// How many folders are there?
+		var buffTotalFolders = new Buffer(4);
+		buffTotalFolders.writeUInt32LE(fileInfo.folderList.length, 0);
+		allSections.push(buffTotalFolders);
+
+		// Loop over all sub directories and build
+		for(var i=0; i<fileInfo.folderList.length; ++i) {
+			var thisSection = buildSection(fileInfo.folderList[i], true);
+
+			// Store this section
+			allSections.push(thisSection);
+		}
+
+		// How many files are there?
+		var buffTotalFiles = new Buffer(4);
+		buffTotalFiles.writeUInt32LE(fileInfo.fileList.length, 0);
+
+		// Add it to our section list
+		allSections.push(buffTotalFiles);
+
+		// Add all the files
+		for(var i=0; i<fileInfo.fileList.length; ++i) {
+			// Get the file data
+			var thisSection = buildSection(fileInfo.fileList[i], false);
+
+			// Store this section
+			allSections.push(thisSection);
+		}
+	} else {
+		// Grab the data from the file
+		var data = fs.readFileSync(fileInfo.fullPath);
+
+		// Encrypt the data
+		decryptFile(data, data.length + buffFileName.length);
+
+		// Add the data onto the list of sections
+		allSections.push(data);
+	}
+	
+	// Concat all sections to craete the final payload
+	var result = Buffer.concat(allSections);
+
+	// Write the size of this buffer into the buffer
+	result.writeUInt32LE(result.length - 4, 0);
+
+	// We're done here
+	return result;
+}
+
+// Creates a buffer that contains a string + a header
+function createBufferString(str) {
+	var header = new Buffer(1);
+
+	header.writeUInt8(str.length, 0);
+	
+	return Buffer.concat([
+		header,
+		new Buffer(str)
+	]);
 }
 
 function ensureDirectoryExists(dir) {
@@ -206,6 +378,16 @@ function readLong(info) {
 	return toRet;
 }
 
+function doAdvertising() {
+	console.log('');
+	console.log('If you like this tool, and want to support the tool\'s development then make sure to subscribe to our YouTube channel.');
+	console.log('Need help? Watch our Octogeddon modding tutorials on our YouTube channel, or chat on our Discord server.');
+	console.log('');
+	console.log('https://www.youtube.com/AzzaFortysix');
+	console.log('https://discord.gg/8u6W6SX');
+	console.log('');
+}
+
 // Ensure we have enough arguments
 if(process.argv < 3) {
 	console.log('Please specify either unpack or repack mode!');
@@ -217,7 +399,9 @@ ensureDirectoryExists('extracted');
 ensureDirectoryExists('edited_extracted');
 
 // Grab the runmode
-var runMode = process.argv[2].toLowerCase();
+var runMode = (process.argv[2] || '').toLowerCase();
+var runModeParam1 = (process.argv[3] || '').toLowerCase();
+var runModeParam2 = (process.argv[4] || '').toLowerCase();
 
 // Which action to perform?
 if(runMode == 'unpack') {
@@ -234,6 +418,27 @@ if(runMode == 'unpack') {
 		//extract: true,
 		inject: true
 	});
+} else if(runMode == 'build') {
+	// Prepare the files that we need to pack
+	var toPack;
+	var outputName = runModeParam1 || 'packed.ayg';
+
+	if(runModeParam2 == 'minimal') {
+		// We are only packing the files that we find in edited_extracted
+		toPack = prepareFileStructure([
+			'edited_extracted'
+		]);
+	} else {
+		// Let's pack everything from the extracted directory
+		// Then we will override it with things we find in the edited directory
+		toPack = prepareFileStructure([
+			'extracted',
+			'edited_extracted'
+		]);
+	}
+
+	// Perform the packing
+	buildAYG(outputName, toPack);
 } else {
 	console.log('Unknown operation mode: ' + runMode);
 }

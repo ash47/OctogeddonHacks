@@ -23,8 +23,14 @@
  - Make sure to delete old save files that are in both locations, per above
 
 # How do I unpack data.ayg?
- - This repo contains a tool to both unpack and repack the data.ayg file! The tool will only allow you to replace existing files, it currently can't add or delete new files to the data.ayg.
+ - This repo contains a tool to both unpack and repack the data.ayg file! The tool can be used to both replace existing files in an archive, and build a brand new archive from scratch!
  - The tool is written with [NodeJS](https://nodejs.org/en/download/) so make sure you've downloaded and installed a copy.
  - Copy your `data.ayg` file into the Unpackers directory and then run `unpack.bat` to unpack all of the files -- This will create the `extracted` and `edited_extracted` directories.
  - Copy any files you wish to edit into the `edited_extracted` directory, making sure that the exact path matches in both.
  - Run the `repack.bat` to repack the `data.ayg` file, this will create a new file `repacked_data.ayg`.
+
+# How do I create data.ayg from scratch?
+ - You need two directories `extracted` and `edited_extracted`.
+ - There are two options `build.bat` which will create `packed.ayg` and `build_minimal.bat` which will create `minimal_packed.ayg`.
+ - The `build.bat` script will take all files that are in `extracted`, and `edited_extracted` and build `packed.ayg` out of the files. The files in edited_extracted will take priority / will override anything from the `extracted` directory.
+ - The `build_minimal.bat` will create `minimal_packed.ayg` which will consist only of the files in `edited_extracted`, allowing for a much smaller archive.
