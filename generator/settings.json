@@ -36,7 +36,7 @@
 				"mappathanim": "images/maps/path_newyork",
 				"missiontitle": "tokyotitle",
 				"missionsubtitle": "tokyosubtitle",
-				"folder": "images/city/toky",
+				"folder": "images/city/tokyo",
 				"music": "music/city3music",
 				"includeXML": "<includexml name=\"properties/citygame.xml\" />",
 				"include": "properties/tokyocity1.xml",
