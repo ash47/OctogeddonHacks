@@ -67,6 +67,12 @@ function generateLevel() {
 		monument: getRandomElementFromArray(possibleMonuments)
 	});
 
+	// How many buildings will there be?
+	var totalBuildings = Math.floor(Math.random() * 5) + 1;
+	res = applyModifications(res, {
+		totalbuildings: '' + totalBuildings
+	});
+
 	return res;
 }
 

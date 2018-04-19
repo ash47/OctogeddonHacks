@@ -1,9 +1,9 @@
 
 <sublevel folder="{{folder}}" 
             startwavediff="-1" 
-            buildings="1" 
+            buildings="{{totalbuildings}}" 
             startwavediffhard="1"
-            buildingshard="1" 
+            buildingshard="{{totalbuildings}}" 
             name="NYC City Boss" 
             walkondestx="300" 
             game="{{game}}" 
