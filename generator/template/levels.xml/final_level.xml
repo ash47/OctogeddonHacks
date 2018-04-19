@@ -1,0 +1,34 @@
+<level name="Washington DC" mapanim="images/maps/map_dc" mappathanim="images/maps/path_newyork" missiontitle="dctitle" missionsubtitle="dcsubtitle" shellawards="sssss,sssss,sssss,sssss,sssss,ssssssssss,ssssssssss,ssssssssss,ssssssssssg,ssssssssssg" shellawards_hard="sssss,sssss,sssss,sssss,sssss,ssssssssss,ssssssssss,ssssssssss,ssssssssssg,ssssssssssg" >
+
+  <sublevel folder="images/city/dc" 
+            startwavediff="-1" 
+            buildings="3" 
+            startwavediffhard="1"
+            buildingshard="3" 
+            name="DC City Boss"
+            game="citygame" 
+            walkondestx="300"
+            music="music/city5music"
+            include="properties/dccity1.xml" 
+            startscript="set chooseenemies=6;"
+            ambulance="ambulanceplane"
+            maxambulances="1"
+            normalscript="setparm ambulanceodds=50;" 
+            adventurescript="setparm ambulanceodds=90;"
+            treasure="treasureplane"
+            extralifebasecost="5700"
+            extralifecostinc="2850"
+            progressbartext="dccity3"
+            >
+    <includexml name="properties/citygame.xml" />
+    <enemy name="Plane"></enemy>
+    <enemy name="NuclearPlane"></enemy>
+    <enemy name="HeavySharkPlane"></enemy>
+    <enemy name="ShooterPlane"></enemy>
+    <enemy name="SpeedySub"></enemy>
+    <enemy name="MegaPlane"></enemy>
+    <boss name="WhiteHouse" bgtile="road_transition" hidepreviewifunseen="true" music="music/finalboss" musicdelay="2.5" ></boss>
+    <award name="WIN" script="set hardmodeunlocked=true;">    </award>
+  </sublevel>
+
+</level>

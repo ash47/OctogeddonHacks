@@ -1,0 +1,341 @@
+<script name ="globals"
+
+        appstart="
+        setappparm maxstorelabslots=9;
+        setappparm maxstorehearts=10;
+        "
+        
+        
+        setup="
+        set startlives=2;
+        set supertreasureodds=5;
+        set starthearts=10;
+        set maxlegs=999;
+        set startingcash=9999999;
+        "
+
+        newgame="
+        set rerolllabitems=true;
+        set heartcount=starthearts;
+        set fadelockedhearts=true;
+        set maxhearts=10;
+        set mandatorymegaenemies=0;
+        set mandatorygigaenemies=0;
+        set escrowmoney=0;
+        set escrowshells=0;
+        set money=startingcash;
+        set lastgametype= ;
+        set lastlevelsetup=-1;
+        set lastsublevelsetup=-1;
+        set showcompendium=true;
+        set showstore=false;
+        set shellstorednabuys=2;
+        "
+
+        finishedlevel="
+        set rerolllabitems=true;
+        set nostorecontinuesthislevel=false;
+        "
+        
+        lostlife="
+        set rerolllabitems=true;
+        set shellstorednabuys=2;
+        "
+
+        lostgame="
+        "
+        
+
+        tryagain="
+        set money=startingcash;
+        set mandatorymegaenemies=0;
+        set mandatorygigaenemies=0;
+        set levelstarted=0;
+        set sublevelstarted=0;
+        "
+        
+        >
+  
+</script>
+
+<script name="adventure" 
+
+        gamerules="
+        set startwave=30;
+        set maxlabslots=9;
+        set showextraitemslots=5;
+        set progressbartextcolor=255,255,255;
+        set showlevelmaps=true;
+        "
+        
+        
+        init="
+        call globals.setup;
+        set legchoicecount=999;
+        set startinglegcount=2;
+        "
+        
+        newgame="
+        call globals.newgame;
+        set maxhearts=10;
+        set continues=0;
+        set supertreasureodss=supertreasureodds;
+        set canbuycontinues=true;
+        set showlivesui=true;
+        set showstartingcashbutton=true;
+        set showdnabutton=true;
+        set showstartinglegsbutton=true;
+        set showlabitemsbutton=true;
+        set showlabitemrefresherbutton=true;
+        set visitstoreeverylevel=true;
+        set showrepairhelmetbutton=true;
+        set dodeathscreen=true;
+        set continuegame=true;
+        set startlives=2;
+        set supertreasureodds=5;
+        set starthearts=10;
+        set maxlegs=999;
+        set startingcash=9999999;
+        "
+  
+        finishedlevel="
+        call globals.finishedlevel;
+        "
+        
+        lostlife="
+        call globals.lostlife;
+        "
+
+        lostgame="
+        call globals.lostlife;
+        set continuegame=false;
+        "
+        
+        tryagain="
+        call globals.tryagain;
+        set continues=0;
+        set continuegame=true;
+        "
+       
+        >
+  <!-- set visitstoreoncheckpoint=true; -->
+</script>
+
+<script name="normal" 
+        
+        gamerules="
+        set startwave=30;
+        set maxlabslots=9;
+        set showextraitemslots=5;
+        set progressbartextcolor=255,255,255;
+        set showlevelmaps=true;
+        set whirlpoollevel=1-1;
+        set whirlpoolwarp=1-4;
+        set whirlpoolcash=1500;
+        set whirlpoolallowed=false;
+        "
+        
+        
+        init="
+        call globals.setup;
+        set legchoicecount=999;
+        set startinglegcount=2;
+        "
+        
+
+        newgame="
+        call globals.newgame;
+        set maxhearts=10;
+        set continues=startlives;
+        set supertreasureodss=supertreasureodds;
+        set heartcount=min maxhearts starthearts;
+        set canbuycontinues=true;
+        set showlivesui=true;
+        set showrepairhelmetbutton=true;
+        set showstartingcashbutton=true;
+        set showdnabutton=true;
+        set showstartinglegsbutton=true;
+        set showlabitemsbutton=true;
+        set showlabitemrefresherbutton=true;
+        set dodeathscreen=true;
+        set continuegame=true;
+        "
+        
+        finishedlevel="
+        call globals.finishedlevel;
+        "
+        
+
+        lostlife="
+        call globals.lostlife;
+        "
+
+        lostgame="
+        set storecontinues=true;
+        set continuegame=false;
+        "
+        
+        tryagain="
+        call globals.tryagain;
+        set continues=startlives;
+        set heartcount=min maxhearts starthearts;
+        set continuegame=true;
+        "
+>
+</script>
+
+
+<script name="hard"
+        
+        gamerules="
+        set maxlabslots=9;
+        set showextraitemslots=0;
+        set progressbartextcolor=255,32,32;
+        set startwave=3;
+        set showlevelmaps=true;
+        set whirlpoolallowed=false;
+        "
+        
+        
+        init="
+        call globals.setup;
+        set legchoicecount=999;
+        set startinglegcount=2;
+        set whirlpoolallowed=false;
+        "
+        
+
+        newgame="
+        call globals.newgame;
+        set maxhearts=10;
+        set continues=startlives;
+        set supertreasureodss=supertreasureodds;
+        set heartcount=min starthearts maxhearts;
+        set canbuycontinues=true;
+        set showlivesui=true;
+        set showrepairhelmetbutton=false;
+        set showstartingcashbutton=true;
+        set showdnabutton=true;
+        set showstartinglegsbutton=true;
+        set showlabitemsbutton=true;
+        set showlabitemrefresherbutton=true;
+        set dodeathscreen=true;
+        set continuegame=true;
+        "
+        
+        finishedlevel="
+        call globals.finishedlevel;
+        "
+        
+
+        lostlife="
+        call globals.lostlife;
+        "
+
+        lostgame="
+        set storecontinues=true;
+        set continuegame=false;
+        "
+        
+        tryagain="
+        call globals.tryagain;
+        set continues=startlives;
+        set heartcount=min starthearts maxhearts;
+        set continuegame=true;
+        "
+>
+</script>
+
+<script name="endless"
+        
+        gamerules="
+        set startwave=0;
+        set maxlabslots=9;
+        set showextraitemslots=5;
+        set progressbartextcolor=255,255,255;
+        set showlevelmaps=false;
+        set endlessmegawave=21;
+        set endlessgigawave=36;
+        "
+        
+        
+        init="
+        call globals.setup;
+        set legchoicecount=999;
+        set startinglegcount=2;
+        "
+        
+
+        newgame="
+        call globals.newgame;
+        set nostorecontinuesthislevel=true;
+        set doublewaves=true; 
+        set nuclearwaves=true;
+        set shellloot=true;
+        set extralifeodds=25;
+        set endlessrunlastwave=0;
+        set endlessrunhighwave=0;
+        set maxhearts=10;
+        set continues=startlives;
+        set supertreasureodss=supertreasureodds;
+        set heartcount=min maxhearts starthearts;
+        set canbuycontinues=true;
+        set showlivesui=true;
+        set showrepairhelmetbutton=false;
+        set showstartingcashbutton=true;
+        set showdnabutton=true;
+        set showstartinglegsbutton=true;
+        set showlabitemsbutton=true;
+        set showlabitemrefresherbutton=true;
+        set dodeathscreen=true;
+        set picknewbg=true;
+        set continuegame=false;
+        set endlesscheckpoint=0;
+        "
+        
+        finishedlevel="
+        call globals.finishedlevel;
+        "
+        
+
+        lostlife="
+        call globals.lostlife;
+        "
+
+        lostgame="
+        set storecontinues=true;
+        set continuegame=false;
+        set picknewbg=true;
+        "
+        
+        tryagain="
+        call globals.tryagain;
+        set continues=startlives;
+        set nostorecontinuesthislevel=true;
+        set heartcount=min maxhearts starthearts;
+        set endlessrunlastwave=0;
+        set endlessrunhighwave=0;
+        set endlesscheckpoint=0;
+        "
+>
+</script>
+
+
+
+
+<gigaenemies citygame="centipedeboss,gigatank,gigaplane" oceangame="spawnerminiboss,shooterminiboss,centipedeboss,gigasub"/>
+<megaenemies citygame="megaplane,tank,heavysharkplane" oceangame="megasub,heavysharksub"/>
+
+<shellstore
+  dna0="sequence,cobraleg:0,kingcobraleg:0,supersnake:0"
+  dna1="sequence,porcupineleg:0,queenbeeleg:0,superchickenleg:0"
+  dna2="sequence,snail:0,coral:0,scallop:0,conch:0,horseshoe:0"
+  dna3="sequence,sawshark:0,narwhal:0,trexleg:0,pelican:0,dragonleg:0"
+  dna4="sequence,dolphinleg:0,goldfishleg:0,fireflyleg:0:angler,snappingturtleleg:0:turtleleg"
+  
+  heartlevel0="dna0,dna1,dna2,startinglives,labslots,whirlpool"
+  heartlevel1="dna0,dna1,dna2,startinglives,labslots,whirlpool,dna3,dna4,enemypreview"
+  heartlevel2="dna0,dna1,dna2,startinglives,labslots,whirlpool,dna3,dna4,enemypreview,startinglegs,retaliation,startingcash"
+  heartlevel3="dna0,dna1,dna2,startinglives,labslots,whirlpool,dna3,dna4,enemypreview,startinglegs,retaliation,startingcash,extralimb"
+>
+</shellstore>

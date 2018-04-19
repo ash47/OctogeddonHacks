@@ -1,0 +1,198 @@
+{
+	"templateDir": "template",
+	"outputDir": "../Unpacker/edited_extracted/",
+	"templates": {
+		"city": [
+			{
+				"name": "New York City",
+				"game": "citygame",
+				"mapanim": "images/maps/map_newyork",
+				"mappathanim": "images/maps/path_newyork",
+				"missiontitle": "nyctitle",
+				"missionsubtitle": "nycsubtitle",
+				"folder": "images/city/new_york_city",
+				"music": "music/city1music",
+				"includeXML": "<includexml name=\"properties/citygame.xml\" />",
+				"include": "properties/nycity1.xml",
+				"bgtile": "monument_tile"
+			},
+			{
+				"name": "Sydney",
+				"game": "citygame",
+				"mapanim": "images/maps/map_sydney",
+				"mappathanim": "images/maps/path_newyork",
+				"missiontitle": "sydneytitle",
+				"missionsubtitle": "nycsubtitle",
+				"folder": "images/city/sydney",
+				"music": "music/city2music",
+				"includeXML": "<includexml name=\"properties/citygame.xml\" />",
+				"include": "properties/sydneycity1.xml",
+				"bgtile": "monument_tile"
+			},
+			{
+				"name": "Tokyo",
+				"game": "citygame",
+				"mapanim": "images/maps/map_tokyo",
+				"mappathanim": "images/maps/path_newyork",
+				"missiontitle": "tokyotitle",
+				"missionsubtitle": "tokyosubtitle",
+				"folder": "images/city/toky",
+				"music": "music/city3music",
+				"includeXML": "<includexml name=\"properties/citygame.xml\" />",
+				"include": "properties/tokyocity1.xml",
+				"bgtile": "monument_tile"
+			},
+			{
+				"name": "Paris",
+				"game": "citygame",
+				"mapanim": "images/maps/map_paris",
+				"mappathanim": "images/maps/path_newyork",
+				"missiontitle": "paristitle",
+				"missionsubtitle": "parissubtitle",
+				"folder": "images/city/paris",
+				"music": "music/city4music",
+				"includeXML": "<includexml name=\"properties/citygame.xml\" />",
+				"include": "properties/pariscity1.xml",
+				"bgtile": "monument_tile"
+			},
+			{
+				"name": "Washington DC",
+				"game": "citygame",
+				"mapanim": "images/maps/map_dc",
+				"mappathanim": "images/maps/path_newyork",
+				"missiontitle": "dctitle",
+				"missionsubtitle": "dcsubtitle",
+				"folder": "images/city/dc",
+				"music": "music/city5music",
+				"includeXML": "<includexml name=\"properties/citygame.xml\" />",
+				"include": "properties/dccity1.xml",
+				"bgtile": "road_transition"
+			}
+		],
+		"ocean": [
+			{
+				"name": "New York City",
+				"game": "oceangame",
+				"mapanim": "images/maps/map_newyork",
+				"mappathanim": "images/maps/path_newyork",
+				"missiontitle": "nyctitle",
+				"missionsubtitle": "nycsubtitle",
+				"folder": "images/ocean/new_york_city",
+				"music": "music/ocean1",
+				"includeXML": "<includexml name=\"properties/oceangame.xml\" />",
+				"include": "properties/nyocean1.xml"
+			},
+			{
+				"name": "Sydney",
+				"game": "oceangame",
+				"mapanim": "images/maps/map_sydney",
+				"mappathanim": "images/maps/path_newyork",
+				"missiontitle": "sydneytitle",
+				"missionsubtitle": "nycsubtitle",
+				"folder": "images/ocean/sydney",
+				"music": "music/ocean2",
+				"includeXML": "<includexml name=\"properties/oceangame.xml\" />",
+				"include": "properties/sydneyocean1.xml"
+			},
+			{
+				"name": "Tokyo",
+				"game": "oceangame",
+				"mapanim": "images/maps/map_tokyo",
+				"mappathanim": "images/maps/path_newyork",
+				"missiontitle": "tokyotitle",
+				"missionsubtitle": "tokyosubtitle",
+				"folder": "images/ocean/toky",
+				"music": "music/ocean3",
+				"includeXML": "<includexml name=\"properties/oceangame.xml\" />",
+				"include": "properties/tokyoocean1.xml"
+			},
+			{
+				"name": "Paris",
+				"game": "oceangame",
+				"mapanim": "images/maps/map_paris",
+				"mappathanim": "images/maps/path_newyork",
+				"missiontitle": "paristitle",
+				"missionsubtitle": "parissubtitle",
+				"folder": "images/ocean/paris",
+				"music": "music/ocean4",
+				"includeXML": "<includexml name=\"properties/oceangame.xml\" />",
+				"include": "properties/parisocean1.xml"
+			},
+			{
+				"name": "Washington DC",
+				"game": "oceangame",
+				"mapanim": "images/maps/map_dc",
+				"mappathanim": "images/maps/path_newyork",
+				"missiontitle": "dctitle",
+				"missionsubtitle": "dcsubtitle",
+				"folder": "images/ocean/dc",
+				"music": "music/ocean5",
+				"includeXML": "<includexml name=\"properties/oceangame.xml\" />",
+				"include": "properties/dcocean1.xml"
+			}
+		],
+		"cityEnemies": [
+			"CentipedeSub",
+			"drone",
+			"heavyplane",
+			"lplane",
+			"megaplane",
+			"gigaplane",
+			"minijelly",
+			"nucleartanker",
+			"piranhaplane",
+			"shooterplane",
+			"speedyplane",
+			"flyingswarm",
+			"flyingscatteringswarm",
+			"tank",
+			"missiletank",
+			"heavysharkplane",
+			"doubleshieldsub",
+			"shieldsub",
+			"gigatank",
+			"forcefieldsub",
+			"doubleshooterplane",
+			"superfastplane"
+		],
+		"oceanEnemies": [
+			"centipedesub",
+			"forcefieldsub",
+			"heavysub",
+			"cloakedheavysub",
+			"megasub",
+			"gigasub",
+			"minijelly",
+			"nuclearsub",
+			"piranhasub",
+			"heavysharksub",
+			"doubleshieldsub",
+			"shootersub",
+			"doubleshootersub",
+			"speedysub",
+			"swarm",
+			"scatteringswarm",
+			"minipillbug",
+			"superfastsub"
+		],
+		"monument": [
+			"StatueOfLiberty",
+			"OperaHouse",
+			"ImperialPalace",
+			"Eiffel"
+		],
+		"cityBoss": [
+			"tankboss",
+			"hopperboss",
+			"crabboss",
+			"MimeBoss"
+		],
+		"oceanBoss": [
+			"spawnerminiboss",
+			"centipedeboss",
+			"shooterminiboss",
+			"robooctoboss",
+			"pillbugboss"
+		]
+	}
+}

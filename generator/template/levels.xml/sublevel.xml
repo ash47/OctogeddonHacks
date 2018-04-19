@@ -1,0 +1,27 @@
+
+<sublevel folder="{{folder}}" 
+            startwavediff="-1" 
+            buildings="1" 
+            startwavediffhard="1"
+            buildingshard="1" 
+            name="NYC City Boss" 
+            walkondestx="300" 
+            game="{{game}}" 
+            music="{{music}}" 
+            include="{{include}}" 
+            startscript="set chooseenemies=5; set shellloot=true;"  
+            ambulance="ambulanceplane" 
+            maxambulances="1" 
+            normalscript="setparm ambulanceodds=75;" 
+            adventurescript="setparm ambulanceodds=95;"
+            treasure="treasureplane"  
+            extralifebasecost="700"
+            extralifecostinc="350"
+            progressbartext="text_city_boss1"
+            >
+    {{includeXML}}
+    {{enemies}}
+    <boss name="{{boss}}" music="music/bossmusic"></boss>
+    <boss name="{{monument}}" bgtile="{{bgtile}}" />
+    <award name="shells" />
+  </sublevel>
