@@ -50,26 +50,22 @@ function generateLevel() {
 		});
 	}
 
-	// Apply the enemy list to the mission
-	res = applyModifications(res, {
-		enemies: enemyList
-	});
-
-	// Add a random boss
-	var possibleBosses = settings.templates.cityBoss;
-	res = applyModifications(res, {
-		boss: getRandomElementFromArray(possibleBosses)
-	});
-
-	// Add a random monument
-	var possibleMonuments = settings.templates.monument;
-	res = applyModifications(res, {
-		monument: getRandomElementFromArray(possibleMonuments)
-	});
-
-	// How many buildings will there be?
 	var totalBuildings = Math.floor(Math.random() * 5) + 1;
+
+	// Add stuff
 	res = applyModifications(res, {
+		enemies: enemyList,
+		boss: getRandomElementFromArray(settings.templates.cityBoss),
+		monument: getRandomElementFromArray(settings.templates.monument),
+		road_tile: getRandomElementFromArray(settings.templates.road_tile),
+		layer_sky: getRandomElementFromArray(settings.templates.layer_sky),
+		close_buildings: getRandomElementFromArray(settings.templates.close_buildings),
+		water: getRandomElementFromArray(settings.templates.water),
+		parallax1: getRandomElementFromArray(settings.templates.parallax1),
+		parallax2: getRandomElementFromArray(settings.templates.parallax2),
+		parallax3: getRandomElementFromArray(settings.templates.parallax3),
+		wall_behind_water_tile: getRandomElementFromArray(settings.templates.wall_behind_water_tile),
+		intersection: getRandomElementFromArray(settings.templates.intersection),
 		totalbuildings: '' + totalBuildings
 	});
 

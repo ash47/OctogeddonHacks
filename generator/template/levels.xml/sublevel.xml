@@ -8,7 +8,6 @@
             walkondestx="300" 
             game="{{game}}" 
             music="{{music}}" 
-            include="{{include}}" 
             startscript="set chooseenemies=5; set shellloot=true;"  
             ambulance="ambulanceplane" 
             maxambulances="1" 
@@ -24,4 +23,73 @@
     <boss name="{{boss}}" music="music/bossmusic"></boss>
     <boss name="{{monument}}" bgtile="{{bgtile}}" />
     <award name="shells" />
+
+    <building hitpoints="800" type="short" images="../new_york_city/BreakableBuilding01" />
+    <building hitpoints="800" type="short" images="../new_york_city/BreakableBuilding02" />
+    <building hitpoints="1600" type="tall" images="../new_york_city/BreakableBuilding03" />
+    <building hitpoints="800" type="short" images="../new_york_city/BreakableBuilding04" />
+    <building hitpoints="1600" type="tall" images="../new_york_city/BreakableBuilding05" />
+
+    <building hitpoints="800" type="short" images="../sydney/sidney_buildingexplosion01" particles="../sydney/sidney_breakablebuilding1_particle1,../sydney/sidney_breakablebuilding1_particle2,../sydney/sidney_breakablebuilding1_particle3,../sydney/sidney_breakablebuilding1_particle4,../sydney/sidney_breakablebuilding1_particle5,../sydney/sidney_breakablebuilding1_particle6,../sydney/sidney_breakablebuilding1_particle7" />
+    <building hitpoints="1600" type="tall" images="../sydney/sidney_buildingexplosion02" particles="../sydney/sidney_breakablebuilding2_particle1,../sydney/sidney_breakablebuilding2_particle2,../sydney/sidney_breakablebuilding2_particle3,../sydney/sidney_breakablebuilding2_particle4,../sydney/sidney_breakablebuilding2_particle5,../sydney/sidney_breakablebuilding2_particle6,../sydney/sidney_breakablebuilding2_particle7" />
+    <building hitpoints="1600" type="tall" images="../sydney/sidney_buildingexplosion03" particles="../sydney/sidney_breakablebuilding03_particle1,../sydney/sidney_breakablebuilding03_particle2,../sydney/sidney_breakablebuilding03_particle3,../sydney/sidney_breakablebuilding03_particle4,../sydney/sidney_breakablebuilding03_particle5,../sydney/sidney_breakablebuilding03_particle6,../sydney/sidney_breakablebuilding03_particle7" />
+    <building hitpoints="800" type="short" images="../sydney/sidney_buildingexplosion04" particles="../sydney/sidney_breakablebuilding04_particle1,../sydney/sidney_breakablebuilding04_particle2,../sydney/sidney_breakablebuilding04_particle3,../sydney/sidney_breakablebuilding04_particle4,../sydney/sidney_breakablebuilding04_particle5,../sydney/sidney_breakablebuilding04_particle6" />
+    <building hitpoints="800" type="short" images="../sydney/sidney_buildingexplosion05" particles="../sydney/sidney_breakablebuilding5_particle1,../sydney/sidney_breakablebuilding5_particle2,../sydney/sidney_breakablebuilding5_particle3,../sydney/sidney_breakablebuilding5_particle4,../sydney/sidney_breakablebuilding5_particle5,../sydney/sidney_breakablebuilding5_particle6,../sydney/sidney_breakablebuilding5_particle7" />
+
+    <building hitpoints="800" type="short" object="TokyoBillboardBuilding" images="../tokyo/tokyo_buildingexplosion01" particles="../tokyo/Tokyo_building1_particle1,../tokyo/Tokyo_building1_particle2,../tokyo/Tokyo_building1_particle3,../tokyo/Tokyo_building1_particle4,../tokyo/Tokyo_building1_particle5,../tokyo/Tokyo_building1_particle6,../tokyo/Tokyo_building1_particle7" />
+    <building hitpoints="800" type="short" images="../tokyo/tokyo_buildingexplosion02" particles="../tokyo/Tokyo_building1_particle1,../tokyo/Tokyo_building1_particle2,../tokyo/Tokyo_building1_particle3,../tokyo/Tokyo_building1_particle4,../tokyo/Tokyo_building1_particle5,../tokyo/Tokyo_building1_particle6,../tokyo/Tokyo_building1_particle7" />
+    <building hitpoints="1600" type="tall" images="../tokyo/tokyo_buildingexplosion03" particles="../tokyo/Tokyo_building3_particle1,../tokyo/Tokyo_building3_particle2,../tokyo/Tokyo_building3_particle3,../tokyo/Tokyo_building3_particle4,../tokyo/Tokyo_building3_particle5,../tokyo/Tokyo_building3_particle6,../tokyo/Tokyo_building3_particle7" />
+    <building hitpoints="800" type="short" images="../tokyo/tokyo_buildingexplosion04" particles="../tokyo/Tokyo_building3_particle1,../tokyo/Tokyo_building3_particle2,../tokyo/Tokyo_building3_particle3,../tokyo/Tokyo_building3_particle4,../tokyo/Tokyo_building3_particle5,../tokyo/Tokyo_building3_particle6,../tokyo/Tokyo_building3_particle7" />
+    <building hitpoints="1600" type="tall" images="../tokyo/tokyo_buildingexplosion05" particles="../tokyo/Tokyo_building3_particle1,../tokyo/Tokyo_building3_particle2,../tokyo/Tokyo_building3_particle3,../tokyo/Tokyo_building3_particle4,../tokyo/Tokyo_building3_particle5,../tokyo/Tokyo_building3_particle6,../tokyo/Tokyo_building3_particle7" />
+
+    <building hitpoints="800" type="short" images="../paris/BreakableBuilding01" particles="../paris/BreakableBuilding01_particle01,../paris/BreakableBuilding01_particle02,../paris/BreakableBuilding01_particle03,../paris/BreakableBuilding01_particle04,../paris/BreakableBuilding01_particle05,../paris/BreakableBuilding01_particle06,../paris/BreakableBuilding01_particle07" />
+    <building hitpoints="800" type="short" images="../paris/BreakableBuilding02" particles="../paris/BreakableBuilding02_particle01,../paris/BreakableBuilding02_particle02,../paris/BreakableBuilding02_particle03,../paris/BreakableBuilding02_particle04,../paris/BreakableBuilding02_particle05,../paris/BreakableBuilding02_particle06,../paris/BreakableBuilding02_particle07" />
+    <building hitpoints="1600" type="tall" images="../paris/BreakableBuilding03" particles="../paris/BreakableBuilding03_particle01,../paris/BreakableBuilding03_particle02,../paris/BreakableBuilding03_particle03,../paris/BreakableBuilding03_particle04,../paris/BreakableBuilding03_particle05,../paris/BreakableBuilding03_particle06,../paris/BreakableBuilding03_particle07" />
+    <building hitpoints="800" type="short" images="../paris/BreakableBuilding04" particles="../paris/BreakableBuilding04_particle01,../paris/BreakableBuilding04_particle02,../paris/BreakableBuilding04_particle03,../paris/BreakableBuilding04_particle04,../paris/BreakableBuilding04_particle05,../paris/BreakableBuilding04_particle06,../paris/BreakableBuilding04_particle07" />
+    <building hitpoints="1600" type="tall" images="../paris/BreakableBuilding05" particles="../paris/BreakableBuilding05_particle01,../paris/BreakableBuilding05_particle02,../paris/BreakableBuilding05_particle03,../paris/BreakableBuilding05_particle04,../paris/BreakableBuilding05_particle05,../paris/BreakableBuilding05_particle06,../paris/BreakableBuilding05_particle07" />
+
+    <building hitpoints="1600" type="tall" images="../dc/BreakableBuilding03" />
+    <building hitpoints="1600" type="tall" images="../dc/BreakableBuilding05" />
+
+
+
+
+    <npc name="electricpole" images="../common/electricpole" miny="545" maxy="545" minspacing="1000" maxspacing="1200" />
+
+
+    <npc name="car" images="../common/city_car1,../common/city_car2,../common/city_car3,../common/city_car4,../common/city_car5,../common/city_car6,../common/city_car7,../common/city_car8" miny="620" minspacing="300" maxspacing="500" weight="8"/>
+
+    <npc name="person" images="../common/runner01,../common/runner02,../common/runner03,../paris/paris_runner" miny="560" maxy="645" mincluster="1" maxcluster="8" clusterspread="150"/>
+
+    <npc name="decoration"  images="../new_york_city/sidewalk_tree,../new_york_city/sidewalk_tree2,../new_york_city/sidewalk_tree3"  miny="558" minspacing="300" maxspacing="500" weight="5" />
+    <npc name="decoration"  images="../new_york_city/busstop,../new_york_city/firehydrant,../new_york_city/mailbox"  miny="558" minspacing="300" maxspacing="500" />
+
+    <npc name="decoration"  images="../sydney/sydney_streettree,../sydney/sydney_streettree2,../sydney/sydney_streettree3"  miny="558" minspacing="300" maxspacing="500" weight="7" />
+    <npc name="decoration"  images="../sydney/busstop,../sydney/firehydrant,../sydney/mailbox"  miny="558" minspacing="300" maxspacing="500" />
+
+    <npc name="decoration"  images="../tokyo/tokyo_sidewalk_tree,../tokyo/tokyo_sidewalk_tree2,../tokyo/tokyo_sidewalk_tree3"  miny="558" minspacing="300" maxspacing="500" weight="5" />
+    <npc name="decoration"  images="../tokyo/busstop,../tokyo/firehydrant,../tokyo/mailbox"  miny="556" minspacing="300" maxspacing="500" />
+
+    <npc name="decoration"  images="../paris/paris_streettree,../paris/paris_streettree2,../paris/paris_streettree3"  miny="558" minspacing="300" maxspacing="500" weight="5" />
+    <npc name="decoration"  images="../paris/busstop,../paris/firehydrant,../paris/mailbox"  miny="558" minspacing="300" maxspacing="500" />
+
+    <npc name="decoration"  images="../dc/sidewalk_tree,../dc/dc_streettree,../dc/dc_streettree2,../dc/dc_streettree3"  miny="558" minspacing="300" maxspacing="500" weight="5" />
+    <npc name="decoration"  images="../dc/busstop,../dc/firehydrant,../dc/mailbox"  miny="558" minspacing="300" maxspacing="500" />
+
+    {{road_tile}}
+
+    {{intersection}}
+
+    <backbuildings images="../new_york_city/layer_4,../new_york_city/layer_5,../new_york_city/layer_6,../new_york_city/layer_7,../new_york_city/layer_8,../new_york_city/layer_9,../new_york_city/layer_10,../new_york_city/layer_11,../new_york_city/layer_12,../new_york_city/layer_13,../new_york_city/layer_14,../sydney/back_buildings/8,../sydney/back_buildings/7,../sydney/back_buildings/10,../sydney/back_buildings/4,../sydney/back_buildings/1,../sydney/back_buildings/2,../sydney/back_buildings/3,../sydney/back_buildings/5,../sydney/back_buildings/6,../sydney/back_buildings/11,../sydney/back_buildings/12,../sydney/back_buildings/13,../sydney/back_buildings/14,../sydney/back_buildings/15,../tokyo/building2,../tokyo/building1,../tokyo/building2,../tokyo/building3,../tokyo/building4,../tokyo/building5,../tokyo/building6,../tokyo/building7,../paris/layer_4,../paris/layer_5,../paris/layer_6,../paris/layer_7,../paris/layer_8,../paris/layer_9,../paris/layer_10,../paris/layer_11,../paris/layer_12,../paris/layer_13,../dc/layer_4,../dc/layer_5,../dc/layer_6,../dc/layer7,../dc/layer_8,../dc/layer_9,../dc/layer_10,../dc/layer_11,../dc/layer_12,../dc/layer_13,../dc/layer_14" />
+
+    {{layer_sky}}
+    <layer tag="clouds" images="../new_york_city/cloud1,../new_york_city/cloud2,../new_york_city/cloud3,../new_york_city/cloud4,../sydney/cloud1,../sydney/cloud2,../sydney/cloud3,../sydney/cloud4,../sydney/cloud1,../sydney/cloud2,../sydney/cloud3,../paris/cloud1,../paris/cloud2,../paris/cloud3,../paris/cloud4,../dc/cloud1,../dc/cloud2,../dc/cloud3,../dc/cloud4" velocity="0.1 to 0.6"></layer>
+    {{parallax1}}
+    {{parallax2}}
+    {{parallax3}}
+    {{wall_behind_water_tile}}
+    {{water}}
+    <layer tag="octo"/>
+    {{close_buildings}}
+
   </sublevel>

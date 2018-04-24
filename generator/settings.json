@@ -2,6 +2,68 @@
 	"templateDir": "template",
 	"outputDir": "../Unpacker/edited_extracted/",
 	"templates": {
+		"road_tile": [
+			"<roadtile images=\"../new_york_city/road_tile\"/>",
+			"<roadtile images=\"../sydney/roadtile\"/>",
+			"<roadtile images=\"../tokyo/road\"/>",
+			"<roadtile images=\"../paris/road_tile\"/>",
+			"<roadtile images=\"../dc/road_tile\"/>"
+		],
+		"layer_sky": [
+			"<layer tag=\"parallax\" images=\"../new_york_city/sky\" scrollscale=\".0\" y=\"0\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../sydney/bg\" scrollscale=\".0\" y=\"0\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../tokyo/background\" scrollscale=\".0\" y=\"-1\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../paris/sky\" scrollscale=\".0\" y=\"0\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../dc/sky\" scrollscale=\".0\" y=\"0\" ></layer>"
+		],
+		"close_buildings": [
+			"<layer tag=\"parallax\" images=\"../new_york_city/close_buildings_\" scrollscale=\"1.5\" />",
+			"<layer tag=\"parallax\" images=\"../sydney/closebuildings\" scrollscale=\"1.5\" />",
+			"<layer tag=\"parallax\" images=\"../tokyo/paralax1\" scrollscale=\"1.5\" />",
+			"<layer tag=\"parallax\" images=\"../paris/close_buildings\" scrollscale=\"1.5\" />",
+			"<layer tag=\"parallax\" images=\"../dc/close_buildings_\" scrollscale=\"1.5\" />"
+		],
+		"water": [
+			"<layer tag=\"parallax\" images=\"../new_york_city/water\" scrollscale=\".83\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../sydney/water\" scrollscale=\".83\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../paris/water\" scrollscale=\".83\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../dc/water\" scrollscale=\".83\" ></layer>"
+		],
+		"parallax1": [
+			"<layer tag=\"parallax\" images=\"../new_york_city/far_buildings03\" scrollscale=\".4\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../sydney/farbuildings3\" scrollscale=\".4\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../tokyo/paralax6\" scrollscale=\".4\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../paris/far_buildings03\" scrollscale=\".4\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../dc/far_buildings03\" scrollscale=\".4\" ></layer>"
+		],
+		"parallax2": [
+			"<layer tag=\"parallax\" images=\"../new_york_city/farbuildings02\" scrollscale=\".45\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../sydney/farbuildings2\" scrollscale=\".45\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../tokyo/paralax5\" scrollscale=\".45\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../paris/farbuildings02\" scrollscale=\".45\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../dc/far_buildings02\" scrollscale=\".45\" ></layer>"
+		],
+		"parallax3": [
+			"<layer tag=\"parallax\" images=\"../new_york_city/farbuildings01\" scrollscale=\".5\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../sydney/Layer_1\" scrollscale=\".5\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../tokyo/paralax4\" scrollscale=\".5\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../paris/farbuildings01\" scrollscale=\".5\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../dc/far_buildings01\" scrollscale=\".5\" ></layer>"
+		],
+		"wall_behind_water_tile": [
+			"<layer tag=\"parallax\" images=\"../new_york_city/wall_behind_water_tile\" scrollscale=\".77\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../sydney/hedge1\" scrollscale=\".77\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../tokyo/paralax3\" scrollscale=\".77\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../paris/wall_behind_water_tile\" scrollscale=\".77\" ></layer>",
+			"<layer tag=\"parallax\" images=\"../dc/wall_behind_water_tile\" scrollscale=\".77\" ></layer>"
+		],
+		"intersection": [
+			"<intersection images=\"../new_york_city/crushable_building_road_tile\" y=\"477\"  center=\"510,170\" buildingstop=\"68\" buildingstart=\"736\" crateranim=\"../new_york_city/building_crater\" crateroffset=\"0,-12\" >  <decorations images=\"../new_york_city/trafficlight_upperright\" pos=\"711,84\"/></intersection>",
+			"<intersection images=\"../sydney/intersection\" center=\"510,160\" buildingstop=\"68\" buildingstart=\"736\" trafficlight=\"711,84\" crateranim=\"../sydney/building_crater\" crateroffset=\"0,-12\"/>",
+			"<intersection images=\"../tokyo/intersection\" center=\"535,160\" buildingstop=\"35\" buildingstart=\"939\" trafficlight=\"933,97\" crateranim=\"../tokyo/tokyo_building_crater\" crateroffset=\"15,-12\"/>",
+			"<intersection images=\"../paris/crushable_building_road_tile\" y=\"477\"  center=\"510,175\" buildingstop=\"68\" buildingstart=\"736\" trafficlight=\"711,84\" crateranim=\"../paris/paris_building_crater\" crateroffset=\"0,-12\"/>",
+			"<intersection images=\"../dc/crushable_building_road_tile\" y=\"477\"  center=\"510,175\" trafficlight=\"711,84\" buildingstop=\"68\" buildingstart=\"736\" crateranim=\"../dc/building_crater\" crateroffset=\"0,-12\"/>"
+		],
 		"city": [
 			{
 				"name": "New York City",
