@@ -161,6 +161,8 @@ $(document).ready(function() {
 				break;
 
 				case 'normal':
+				case 'hard':
+				case 'endless':
 					// Skip a ton
 					info.pos += 16;
 				break;
