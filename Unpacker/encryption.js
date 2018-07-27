@@ -1,5 +1,6 @@
 var fs = require('fs');
 var path = require('path');
+var m5k = require('../m5kEditor/m5k.js');
 
 function decryptFile(buff, buffSize) {
 	var keyNum = 0x01020304 + buff.length;
@@ -378,6 +379,79 @@ function readLong(info) {
 	return toRet;
 }
 
+// Unpack m5k
+function m5kUnpackAll(directory) {
+	var allFiles = fs.readdirSync(directory);
+
+	for(var i=0; i<allFiles.length; ++i) {
+		// Grab info on the file
+		var thisFile = allFiles[i];
+		var fullPath = path.join(directory, thisFile);
+		var fileInfo = fs.statSync(fullPath);
+
+		// Unpack sub directories
+		if(fileInfo.isDirectory()) {
+			m5kUnpackAll(fullPath);
+			continue;
+		}
+
+		// Is the extension m5k?
+		if(path.extname(thisFile) == '.m5k') {
+			// Do this step async
+			(function(thePath) {
+				setTimeout(function() {
+					new m5k.readM5k(thePath);
+				}, 1)
+			})(fullPath);
+		}
+	}
+
+	// Do the advertising
+	doAdvertising();
+}
+
+// Repack all m5k
+function m5kRepackAll(directory) {
+	var allFiles = fs.readdirSync(directory);
+
+	for(var i=0; i<allFiles.length; ++i) {
+		// Grab info on the file
+		var thisFile = allFiles[i];
+		var fullPath = path.join(directory, thisFile);
+		var fileInfo = fs.statSync(fullPath);
+
+		// Unpack sub directories
+		if(fileInfo.isDirectory()) {
+			m5kRepackAll(fullPath);
+			continue;
+		}
+
+		// Is the extension m5k?
+		if(path.extname(thisFile) == '.m5k') {
+			var myFile = new m5k.readM5k(fullPath);
+			myFile.tryReplaceTEXSAutomatic();
+		}
+	}
+
+	// Do the advertising
+	doAdvertising()
+}
+
+// Repack single m5k
+function m5kRepack(fullPath) {
+	if(fullPath == '') {
+		console.log('Please drag and drop an m5k into here to rebuild it.');
+		return;
+	}
+
+	// Load the file and try to recompile it
+	var myFile = new m5k.readM5k(fullPath);
+	myFile.tryReplaceTEXSAutomatic();
+
+	// Do the advertising
+	doAdvertising()
+}
+
 function doAdvertising() {
 	console.log('');
 	console.log('If you like this tool, and want to support the tool\'s development then make sure to subscribe to our YouTube channel.');
@@ -394,9 +468,11 @@ if(process.argv < 3) {
 	return;
 }
 
-// Ensure the directories we care about exist
-ensureDirectoryExists('extracted');
-ensureDirectoryExists('edited_extracted');
+function ensureExtractDirectoriesExist() {
+	// Ensure the directories we care about exist
+	ensureDirectoryExists('extracted');
+	ensureDirectoryExists('edited_extracted');
+}
 
 // Grab the runmode
 var runMode = (process.argv[2] || '').toLowerCase();
@@ -407,12 +483,16 @@ var runModeParam2 = (process.argv[4] || '').toLowerCase();
 if(runMode == 'unpack') {
 	// Unpack
 
+	ensureExtractDirectoriesExist();
+
 	unpackDataAyg('data.ayg', 'repacked_data.ayg', {
 		extract: true,
 		//inject: true
 	});
 } else if (runMode == 'repack') {
 	// Repack
+
+	ensureExtractDirectoriesExist();
 
 	unpackDataAyg('data.ayg', 'repacked_data.ayg', {
 		//extract: true,
@@ -422,6 +502,8 @@ if(runMode == 'unpack') {
 	// Prepare the files that we need to pack
 	var toPack;
 	var outputName = runModeParam1 || 'packed.ayg';
+
+	ensureExtractDirectoriesExist();
 
 	if(runModeParam2 == 'minimal') {
 		// We are only packing the files that we find in edited_extracted
@@ -439,6 +521,19 @@ if(runMode == 'unpack') {
 
 	// Perform the packing
 	buildAYG(outputName, toPack);
+} else if(runMode == 'm5k_unpack') {
+	ensureExtractDirectoriesExist();
+
+	// We are going to unpack every single m5k file that is sitting in the "edited_extracted directory"
+	m5kUnpackAll('edited_extracted');
+} else if(runMode == 'm5k_repack_all') {
+	ensureExtractDirectoriesExist();
+	
+	// We take every m5k we can find, see if there is a .png there to repack, and then repack it
+	m5kRepackAll('edited_extracted');
+} else if(runMode == 'm5k_repack') {
+	// We take every m5k we can find, see if there is a .png there to repack, and then repack it
+	m5kRepack(runModeParam1);
 } else {
 	console.log('Unknown operation mode: ' + runMode);
 }

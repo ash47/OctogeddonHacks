@@ -1,0 +1,25 @@
+{
+  "name": "m5keditor",
+  "version": "1.0.0",
+  "description": "Unpacker for Octogeddon m5k format",
+  "main": "m5k.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ash47/OctogeddonHacks.git"
+  },
+  "keywords": [
+    "m5k"
+  ],
+  "author": "Ash47",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/ash47/OctogeddonHacks/issues"
+  },
+  "homepage": "https://github.com/ash47/OctogeddonHacks#readme",
+  "dependencies": {
+    "pngjs-image": "^0.11.7"
+  }
+}

@@ -9,3 +9,7 @@ Unpacker/multiplayer
 Unpacker/multiplayer_mod
 Unpacker/extracted.asd
 Unpacker/live_data.ayg
+Unpacker/ayg_build_minimal_direct.bat
+m5kEditor/node_modules
+m5kEditor/debug
+m5kEditor.working
