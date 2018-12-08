@@ -13,3 +13,4 @@ Unpacker/ayg_build_minimal_direct.bat
 m5kEditor/node_modules
 m5kEditor/debug
 m5kEditor.working
+node_modules/
