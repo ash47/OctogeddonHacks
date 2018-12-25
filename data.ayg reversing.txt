@@ -1,0 +1,125 @@
+
+<LONG> Size of this chunk		0x29e14097
+<LONG> Number of entries		0x00000600
+<LONG> ??? Size of this entry	0x13902a00
+<STRING> Folder Name			fonts
+<LONG> NULL						0x00000000
+<LONG> ??? Number of files?		0x00000038
+
+<LONG> SIZE OF THIS FILE		0x0017B700
+<STRING> Name of file			arial_bold_8.png		- Size = 17A5	NamePos = 3E, DataPos = 50
+
+<LONG> ??? SIZE OF THIS FILE?	0x00165ba2	The middle short is the size of the chunk, side bytes currently unknown
+<STRING> Name of file			arial_bold_8.xml		- Size = 17F9	NamePos = 17F9, DataPos = 180B
+
+<LONG> ??? SIZOE OF THIS FILE?	0x001f6314
+<STRING> Name of file			courier_new_bold_10.png	- Size = 1F50	NamePos = 2E58, DataPos = 2E71
+
+
+STRING - Folder Name
+LONG - null
+LONG - Number of files in this set
+
+LONG - Size of the next file, including the filename
+STRING - Name of current file
+<Data>
+
+
+
+
+
+
+
+23 4A 4C 46
+C6 72 4C 46
+FB 09 4C 46
+FA 27 4C 46
+E4 C7 4C 46
+96 B4 4C 46
+13 66 4D 46
+01 59 4A 46
+F7 2D 4C 46
+8C 32 4C 46
+
+
+E2 D4 4C 46 61 8E 18 0B 6D 84 02 0C 27 CC 46 53 6F 84
+89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52 00 00
+
+6b 84 02 01 6c 84 02 01 6d 84 02 01 6e 84 02 01 6f 84
+
+
+arial_bold_8.png
+23 4A 4C 46 A6 10 18 0B AC 1A 02 0C E4 52 46 53 AE 1A
+89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52 00 00
+aa 1a 02 01 ab 1a 02 01 ac 1a 02 01 ad 1a 02 01 ae 1a
+
+offset = -348
+fileSizeTop = 6054, 6054/16 = 378
+fileSizeBottom = 5706, 5706/16 = 356
+
+arial_bold_8.xml
+72 26 7A 6C 23 39 74 64
+3C 3F 
+4e 19 02 01
+
+offset = 2305
+
+courier_new_bold_10.png
+C6 72 4C 46 5D 28 18 0B 51 22 02 0C 1B 6A 46 53 53 22
+89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52 00 00
+4f 22 02 01 50 22 02 01 51 22 02 01 52 22 02 01 53 22
+
+
+
+award_angler.png
+E2 D4 4C 46 61 8E 18 0B 6D 84 02 0C 27 CC 46 53 6F 84
+89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52 00 00
+6b 84 02 01 6c 84 02 01 6d 84 02 01 6e 84 02 01 6f 84
+
+
+
+award_bee.png
+C2 D3 4C 46 41 89 18 0B 4D 83 02 0C 07 CB 46 53 4F 83
+89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52 00 00
+4b 83 02 01 4c 83 02 01 4d 83 02 01 4e 83 02 01 4f 83
+
+0102834b
+0102846b	-- difference = 120
+
+
+
+apron_damage1.png
+11 37 4C 46 94 6D 18 0B 9A 67 02 0C D2 2F 46 53 9C 67
+89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52 00 00
+98 67 02 01 99 67 02 01 9a 67 02 01 9b 67 02 01 9c 67
+
+apron_damage2.png
+B5 24 4C 46 30 7E 18 0B 3E 74 02 0C 76 3C 46 53 40 74
+89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52 00 00
+3c 74 02 01 3d 74 02 01 3e 74 02 01 3f 74 02 01 40 74
+
+data total = 64A6
+
+01026798
+0102743c	-- difference = 3236
+
+
+levels.xml
+D4 A2
+3C 73 
+e8 d1 02 01
+
+
+
+diff = 45,726
+fileSize = 27,901
+
+
+
+aa 1a 02 01
+
+
+16912174
+
+
+6054 - 5706 = 348

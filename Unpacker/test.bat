@@ -1,0 +1,2 @@
+node encryption.js
+pause
