@@ -169,15 +169,20 @@ $(document).ready(function() {
 
 				default:
 					// Warn that there is no handler yet for this
-					//console.log("Warning: There is no handler for " + thisCommand);
+					console.log("Warning: There is no handler for " + thisCommand);
 
-					var newValue = readString(info);
+					try {
+						var newValue = readString(info);
 
-					writeString(info, info.data[info.storeInto][thisCommand] || newValue);
+						writeString(info, info.data[info.storeInto][thisCommand] || newValue);
 
-					// Try to read the data string
-					if(!noOverRide) {
-						info.data[info.storeInto][thisCommand] = newValue;
+						// Try to read the data string
+						if(!noOverRide) {
+							info.data[info.storeInto][thisCommand] = newValue;
+						}
+					} catch(e) {
+						console.log('Warning: Reaching a point where idk what to do :/ Aborting read');
+						info.pos = buff.len;
 					}
 				break;
 			}
